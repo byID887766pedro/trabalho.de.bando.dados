@@ -1,57 +1,134 @@
-# TRABALHO DE BANDO DE DADOS
+# Trabalho SQL
 
-Nome:Pedro Wesley Lima de Paiva
+Nome:Pedro Wesley Lima de Paiva 2ªB
 
-```sql
---Questão 01
-select * from tabela_paises;
-```
-![image](https://github.com/byID887766pedro/trabalho.de.bando.dados/assets/129344687/d803b09c-1890-4712-9049-716be46a1206)
+
+## 1ª Questão
+Selecione todos os dados dos países da tabela_paises;
 
 ```sql
---Questão 02
-select pais, cidade from tabela_paises where pais = 'Brazil';
+select*from tabela_paises
 ```
-![image](https://github.com/byID887766pedro/trabalho.de.bando.dados/assets/129344687/91b5ab88-b02f-4b1d-a352-0055bed5045c)
+## Resultado esperado
 
+![image](https://github.com/gabrielveraspinto/Atividade_01_SQL/assets/111620826/9fc31c6a-0553-4ca9-ac7e-243d27093e5e)
+
+
+
+## 2ª Questão
+Selecione todas as cidades cujo país seja brazil;
 
 ```sql
---Questão 03
-select pais, regiao, cidade from tabela_paises where regiao = 'Ceará';
+select cidade from tabela_paises where pais = 'Brazil
 ```
-![image](https://github.com/byID887766pedro/trabalho.de.bando.dados/assets/129344687/864d5ad6-6fe8-4a66-a8c4-575eca0ebab2)
+## Resultado esperado
+
+![image](https://github.com/gabrielveraspinto/Atividade_01_SQL/assets/111620826/f80e9f34-5139-4109-a10f-b01b24ae352e)
+
+
+
+## 3ª Questão
+Selecione todas as cidades cuja região(estado) é ceará;
+```sql
+select cidade from tabela_paises where regiao = 'Ceará'
+```
+## Resultado esperado
+
+![image](https://github.com/gabrielveraspinto/Atividade_01_SQL/assets/111620826/52a96c28-37ab-4a3e-8c92-bdf290cc5b7e)
+
+
+## 4ª Questão
+Utilize a função count para saber quantas regiões(estados) existem na China,
+utilize também o group by;
 
 ```sql
---Questão 04
-select count(regiao) as total_regioes from tabela_paises where pais = 'China' group by pais;
+select count(regiao) from tabela_paises where pais = 'China' group by regiao
 ```
-![image](https://github.com/byID887766pedro/trabalho.de.bando.dados/assets/129344687/1f162b61-431f-455d-a8cc-391c096d6529)
+## Resultado esperado
+
+![image](https://github.com/gabrielveraspinto/Atividade_01_SQL/assets/111620826/e8d1d212-bb9c-4e73-abe2-06565eac0f26)
+
+
+
+## 5ª Questão
+Quais regiões, diferentes, existem no Canadá?
 
 ```sql
---Questão 05
-select count(distinct regiao) from tabela_paises where pais = 'Canada';
+select count(distinct regiao) from tabela_paises where pais = 'Canada'
 ```
-![image](https://github.com/byID887766pedro/trabalho.de.bando.dados/assets/129344687/2820dcfb-fc7b-4e43-895e-b4622a33664e)
+## Resultado esperado
+
+![image](https://github.com/gabrielveraspinto/Atividade_01_SQL/assets/111620826/f1496114-b7f2-4d96-99db-b54506b1f618)
+
+
+
+## 6ª Questão
+Quantos países diferentes existem na tabela 'tabela_paises';
 
 ```sql
---Questão 06
-select count(distinct pais) from tabela_paises;
+select distinct pais from tabela_paises
 ```
-![image](https://github.com/byID887766pedro/trabalho.de.bando.dados/assets/129344687/a4ad4fd3-3ef3-4508-82d7-14fc3a0d084b)
+## Resultado esperado
+
+![image](https://github.com/gabrielveraspinto/Atividade_01_SQL/assets/111620826/00b4f95d-f70d-4a58-a241-d8bb3133ed0c)
+
+
+
+## 7ª Questão
+Quantas cidades diferentes existem no brazil;
 
 ```sql
---Questão 07
-select count(distinct cidade) from tabela_paises where pais = 'Brazil'
+select distinct cidade from tabela_paises where pais = 'Brazil'
 ```
-![image](https://github.com/byID887766pedro/trabalho.de.bando.dados/assets/129344687/4b066e8c-ca52-437d-8e3d-817f654224e6)
+## Resultado esperado
+
+![image](https://github.com/gabrielveraspinto/Atividade_01_SQL/assets/111620826/78cdb4c5-5172-4141-83e3-7b5eecc61b80)
+
+
+
+## 8ª Questão
+Selecione os países e quantas regiões cada país possui;
 
 ```sql
---Questão 08
-select count(regiao) as total_regioes from tabela_paises group by pais;
+select pais,count(regiao) from tabela_paises group by pais
 ```
-![image](https://github.com/byID887766pedro/trabalho.de.bando.dados/assets/129344687/68c241d0-f432-47b0-9140-b23cf8a7f0ef)
+## Resultado esperado
+
+![image](https://github.com/gabrielveraspinto/Atividade_01_SQL/assets/111620826/cc1b4f2a-9581-4b66-8813-47eed5c6e59f)
+
+
+
+
+## 9ª Questão
+Quantas pessoas com nome começando em 'João' existem no banco?
 
 ```sql
---Questão 09
+select count(nome) from tabela_paises where nome like 'João%'
 ```
+## Resultado esperado
 
+![image](https://github.com/gabrielveraspinto/Atividade_01_SQL/assets/111620826/0398feee-f5c0-4e02-a3b9-bd5dacd128f5)
+
+
+
+## 10ª Questão
+Quantas pessoas têm o nome John?
+
+```sql
+select count(nome) from tabela_paises where nome = 'John'
+```
+## Resultado esperado
+
+![image](https://github.com/gabrielveraspinto/Atividade_01_SQL/assets/111620826/176f0307-ad5d-463c-a883-55c1060cf3a9)
+
+
+
+## 11ª Questão
+Ordene os nomes dos países sem repetição em ordem alfabética;
+
+```sql
+select distinct pais from tabela_paises order by pais ASC
+```
+## Resultado esperado
+
+![image](https://github.com/gabrielveraspinto/Atividade_01_SQL/assets/111620826/48aceab6-00ff-436d-ba2b-b1ebecd88436)
